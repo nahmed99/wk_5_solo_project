@@ -1,6 +1,6 @@
-DROP TABLE repairs;
-DROP TABLE mechanics;
-DROP TABLE cars;
+DROP TABLE IF EXISTS repairs;
+DROP TABLE IF EXISTS mechanics;
+DROP TABLE IF EXISTS cars;
 
 CREATE TABLE mechanics (
     id SERIAL PRIMARY KEY,
@@ -17,6 +17,7 @@ CREATE TABLE cars (
     mot_renewal_date DATE 
 );
 
+--repairs table needs to be created AFTER the two tables that it references (by foreign keys)
 CREATE TABLE repairs (
     id SERIAL PRIMARY KEY,
     mechanic_id INT REFERENCES mechanics(id) ON DELETE CASCADE,
