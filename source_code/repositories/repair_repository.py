@@ -6,10 +6,10 @@ import repositories.car_repository as car_repository
 
 
 def save(repair):
-    sql = """INSERT INTO repairs (repair_date, details, mechanic_id, car_id) 
+    sql = """INSERT INTO repairs ( mechanic_id, car_id, repair_date, details) 
              VALUES (%s, %s, %s, %s) RETURNING id"""
     
-    values = [repair.repair_date, repair.details, repair.mechanic.id, repair.car.id]
+    values = [repair.mechanic.id, repair.car.id, repair.repair_date, repair.details]
 
     results = run_sql(sql, values)
     repair.id = results[0]['id']
