@@ -43,7 +43,13 @@ import repositories.car_repository as car_repository
 repair_repository.delete_all()
 
 
-# create mechanic, car and repair rows/records
+# create mechanic, car and repair objects and then use them to create rows/records on db
+
+mechanic_mot = Mechanic("Thomas", "Brown", True)
+mechanic_repository.save(mechanic_mot)
+
+mechanic_no_mot = Mechanic("Roger", "Rabbit", False)
+mechanic_repository.save(mechanic_no_mot)
 
 
 

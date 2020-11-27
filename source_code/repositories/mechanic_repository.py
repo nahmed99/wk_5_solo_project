@@ -4,12 +4,15 @@ from models.car import Car
 
 
 def save(mechanic):
+    # We want the database MS to return the (newly created) id
     sql = """INSERT INTO mechanics (first_name, last_name, mot_qualified) 
              VALUES (%s, %s, %s) RETURNING id"""
 
     values = [mechanic.first_name, mechanic.last_name, mechanic.mot_qualified]
 
     results = run_sql(sql, values)
+
+    # results are returned as a list of dictionary in our case - capture the id
     mechanic.id = results[0]['id']
 
     return mechanic
@@ -47,7 +50,7 @@ def delete_all():
 
 
 # get all cars that the mechanic has repaired
-def cars(mechanic):
+def cars_repaired(mechanic):
     results = []
 
     sql = """SELECT cars.* 
