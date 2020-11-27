@@ -21,6 +21,6 @@ CREATE TABLE repairs (
     id SERIAL PRIMARY KEY,
     mechanic_id INT REFERENCES mechanics(id) ON DELETE CASCADE,
     car_id INT REFERENCES cars(id) ON DELETE CASCADE,
-    repair_date DATE
+    repair_date DATE,
     details VARCHAR(255)
 );
