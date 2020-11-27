@@ -5,3 +5,4 @@ class Repair:
         self.details = details
         self.mechanic = mechanic
         self.car = car
+        self.id = id
