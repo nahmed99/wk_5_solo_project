@@ -36,7 +36,7 @@ def select(id):
     result = run_sql(sql, values)[0] # ensure only one row is returned.
 
     if result is not None:
-        mechanic = Mechanic(row['first_name'], row['last_name'], row['mot_qualified'])
+        mechanic = Mechanic(result['first_name'], result['last_name'], result['mot_qualified'])
 
     return mechanic
 
@@ -50,7 +50,7 @@ def delete_all():
 def cars(mechanic):
     results = []
 
-    sql """SELECT cars.* 
+    sql = """SELECT cars.* 
            FROM cars
            INNER JOIN repairs ON repairs.car_id = cars.id
            INNER JOIN mechanics ON repairs.mechanic_id = mechanics.id
