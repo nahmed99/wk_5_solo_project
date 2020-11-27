@@ -27,4 +27,26 @@
 # psql -d database_name
 #
 
+import pdb
 
+from models.car import Car
+from models.mechanic import Mechanic
+from models.repair import Repair
+
+
+import repositories.repair_repository as repair_repository
+import repositories.mechanic_repository as mechanic_repository
+import repositories.car_repository as car_repository
+
+
+# delete the repairs first - for referential integrity purposes (they reference the other tables)
+repair_repository.delete_all()
+
+
+# create mechanic, car and repair rows/records
+
+
+
+
+# for testing/tracing:
+pdb.set_trace()
