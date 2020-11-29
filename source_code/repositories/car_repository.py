@@ -13,3 +13,15 @@ def save(car):
 
     return car
 
+
+def select_all():
+    cars = []
+
+    sql = "SELECT * FROM cars"
+    results = run_sql(sql)
+
+    for row in results:
+        car = Car(row['registration_number'], row['make'], row['model'], row['mot_renewal_date'], row['id'])
+        cars.append(car)
+
+    return cars
