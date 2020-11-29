@@ -12,10 +12,15 @@
             <th>Make</th>
             <th>Model</th>
             <th>MOT Renewel Date</th>
+            <th></th>
         </tr>
         {% for car in all_cars %}
         <tr>
-            <td><a href="/cars/{{ car.id }}">{{car.registration_number}}</a><td>{{car.make}}</td><td>{{car.model}}</td><td>{{car.mot_renewal_date}}</td>
+            <td>{{car.registration_number}}</td>
+            <td>{{car.make}}</td>
+            <td>{{car.model}}</td>
+            <td>{{car.mot_renewal_date}}</td>
+            <td><a href="/cars/{{ car.id }}">Worked On By</a></td>
         </tr>
         {% endfor %}
 

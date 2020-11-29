@@ -10,11 +10,21 @@
 
     <section>
 
-        {% for car in cars_repaired %}
-
-            <p><a href="/cars/{{ car.id }}">{{car.registration_number}}</a> {{ car.model }}</p>
-
-        {% endfor %}
+        <table>
+            <tr>
+                <th>Registration Number</th>
+                <th>Make</th>
+                <th>Repairs Done</th>
+            </tr>
+            {% for car in cars_repaired %}
+            <tr>
+                <td>{{car.registration_number}}</td>
+                <td>{{car.make}}</td>
+                <td><a href="/repairs/{{ car.id }}">Details</a></td>
+            </tr>
+            {% endfor %}
+    
+        </table>
 
     </section>
 
