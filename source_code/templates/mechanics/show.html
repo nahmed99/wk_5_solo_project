@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<article>
+
+    <h1>{{mechanic.first_name}} {{mechanic.second_name}}</h1> 
+
+    <h3>Repaired</h3>
+
+    <section>
+
+        {% for car in cars_repaired %}
+
+            <p><a href="/cars/{{ car.id }}">{{car.registration_number}}</a></p>
+
+        {% endfor %}
+
+    </section>
+
+</article>
+
+{% endblock %}

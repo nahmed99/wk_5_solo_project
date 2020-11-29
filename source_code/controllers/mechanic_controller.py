@@ -9,7 +9,7 @@ mechanics_blueprint = Blueprint("mechanics", __name__)
 def mechanic():
     mechanics = mechanic_repository.select_all()
 
-    return render_template("mechanics/index.html", all_mechanics = mechanics)
+    return render_template("mechanics/index.html", all_mechanics=mechanics)
 
 
 @mechanics_blueprint.route("/mechanics/<id>")
