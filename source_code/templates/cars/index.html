@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<article>
+
+    <h1>Cars we repaired recently:</h1> 
+
+    <table>
+        <tr>
+            <th>Registration</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>MOT Renewel Date</th>
+        </tr>
+        {% for car in all_cars %}
+        <tr>
+            <td><a href="/cars/{{ car.id }}">{{car.registration_number}}</a><td>{{car.make}}</td><td>{{car.model}}</td><td>{{car.mot_renewal_date}}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+</article>
+
+{% endblock %}

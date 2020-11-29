@@ -4,15 +4,15 @@
 
 <article>
 
-    <h1>{{mechanic.first_name}} {{mechanic.second_name}}</h1> 
+    <h1>{{mechanic.first_name}} {{mechanic.last_name}}</h1> 
 
-    <h3>Repaired</h3>
+    <h3>Repaired the following vehicles:</h3>
 
     <section>
 
         {% for car in cars_repaired %}
 
-            <p><a href="/cars/{{ car.id }}">{{car.registration_number}}</a></p>
+            <p><a href="/cars/{{ car.id }}">{{car.registration_number}}</a> {{ car.model }}</p>
 
         {% endfor %}
 
