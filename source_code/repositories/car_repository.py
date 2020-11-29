@@ -50,3 +50,24 @@ def delete(id):
 def delete_all():
     sql = "DELETE FROM cars"
     run_sql(sql)
+
+
+# get all cars that the mechanic has repaired
+def worked_on_by(car):
+    results = []
+
+    sql = """SELECT mechanics.*
+           FROM mechanics
+           INNER JOIN repairs ON repairs.mechanic_id = mechanics.id
+           INNER JOIN cars ON repairs.car_id = cars.id
+           WHERE cars.id = %s"""
+
+    values = [car.id]
+
+    sql_results = run_sql(sql, values)
+
+    for row in sql_results:
+        mechanic = Mechanic(row['first_name'], row['last_name'], row['mot_qualified'], row['id'])
+        results.append(mechanic)
+
+    return results

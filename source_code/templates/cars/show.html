@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<article>
+
+    <h1>{{car.registration_number}} {{ car.make }}</h1> 
+
+    <h3>Worked On By:</h3>
+
+    <section>
+
+        <table>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+            </tr>
+            {% for mechanic in mechanics %}
+                <tr>
+                    <td>{{mechanic.first_name}}</td>
+                    <td>{{mechanic.last_name}}</td>
+                </tr>
+            {% endfor %}
+    
+        </table>
+
+    </section>
+
+</article>
+
+{% endblock %}
