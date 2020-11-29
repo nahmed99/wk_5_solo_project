@@ -9,16 +9,16 @@
     <table>
         <tr>
             <th>Date</th>
-            <th>Details</th>
             <th>Vehicle</th>
             <th>Mechanic</th>
+            <th>Details</th>
         </tr>
         {% for repair in all_repairs %}
         <tr>
             <td>{{repair.repair_date}}</td>
-            <td> {{repair.details}}</td>
             <td> {{repair.car.registration_number}}</td>
             <td> {{repair.mechanic.first_name}} {{repair.mechanic.last_name}}</td>
+            <td> {{repair.details}}</td>
         </tr>
         {% endfor %}
 

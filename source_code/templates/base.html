@@ -3,12 +3,16 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
         <title>Garage Management</title>
     </head>
     <body>
         <header>
             <nav>
-                <ul>
+                <ul class="nav_links">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
                     <li>
                         <a href="/mechanics">Mechanics</a>
                     </li>
