@@ -20,7 +20,7 @@
             <tr>
                 <td>{{car.registration_number}}</td>
                 <td>{{car.make}}</td>
-                <td><a href="/repairs/{{ car.id }}">Details</a></td>
+                <td><a href="/repairs/{{mechanic.id}}/{{ car.id }}">Details</a></td>
             </tr>
             {% endfor %}
     

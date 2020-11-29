@@ -13,3 +13,9 @@ def repairs():
     repairs = repair_repository.select_all()
     return render_template("/repairs/index.html", all_repairs = repairs)
 
+
+@repairs_blueprint.route("/repairs/<mechanic_id>/<car_id>")
+def show(mechanic_id, car_id):
+    repairs = repair_repository.get_rapair_details(mechanic_id, car_id)
+    return render_template("/repairs/show.html", car_repairs = repairs)
+

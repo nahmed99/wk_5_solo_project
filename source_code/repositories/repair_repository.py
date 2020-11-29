@@ -48,3 +48,27 @@ def delete(id):
     sql = "DELETE FROM repairs WHERE id = %s"
     values = [id]
     run_sql(sql, values)
+
+
+def get_rapair_details(mechanic_id, car_id):
+    repairs = []
+
+    # using mechanic_id from repairs, retrieve mechanic object
+    mechanic = mechanic_repository.select(mechanic_id)
+
+    # using car_id from repairs, retrieve car object
+    car = car_repository.select(car_id)
+    
+
+    sql = "SELECT * FROM repairs WHERE mechanic_id = %s AND car_id = %s"
+    values = [mechanic_id, car_id] # a list is supplied to run_sql
+
+    results = run_sql(sql, values)
+    
+    for row in results:
+        # create Repair object, assign to variable 'repair'
+        repair = Repair(row['repair_date'], row['details'], mechanic, car, row['id'])
+
+        repairs.append(repair)
+
+    return repairs

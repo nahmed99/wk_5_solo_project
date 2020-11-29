@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<article>
+
+    <h1>{{car_repairs[0].car.registration_number}} {{ car_repairs[0].car.make }}</h1> 
+
+    <h3>Has had the following work done:</h3>
+
+    <section>
+        
+        <table>
+            <tr>
+                <th>Date</th>
+                <th>Repairs Done</th>
+            </tr>
+            {% for repair in car_repairs %}
+            <tr>
+                <td>{{repair.repair_date}}</td>
+                <td>{{repair.details}}</td>
+            </tr>
+            {% endfor %}
+    
+        </table>
+
+    </section>
+
+</article>
+
+{% endblock %}
