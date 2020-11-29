@@ -1,0 +1,17 @@
+{% extends 'bast.html' %}
+
+{% block content %}
+
+<article>
+
+    <h1>Mechanics</h1> 
+
+    {% for mechanic in all_mechanics %}
+
+        <p><a href="/mechanics/{{ mechanic.id }}">{{mechanic.first_name}} {{mechanic.last_name}}</a></p>
+
+    {% endfor%}
+
+</article>
+
+{% endblock%}
