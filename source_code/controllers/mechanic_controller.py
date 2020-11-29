@@ -3,11 +3,11 @@ from flask import Blueprint
 from models.mechanic import Mechanic
 import repositories.mechanic_repository as mechanic_repository
 
-mechanics_blueprint = Blueprint("mechanic", __name__)
+mechanics_blueprint = Blueprint("mechanics", __name__)
 
-@mechanics_blueprint.route("/mechanic")
+@mechanics_blueprint.route("/mechanics")
 def mechanic():
-    mechanics = mechanic_repository.select_all
+    mechanics = mechanic_repository.select_all()
 
     return render_template("mechanics/index.html", all_mechanics = mechanics)
 

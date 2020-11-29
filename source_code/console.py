@@ -1,6 +1,6 @@
 # BEFORE RUNNING THIS PROGRAM, MAKE SURE THAT YOU HAVE CREATED THE REQUIRED DATABASE (using: createdb database_name):
 #
-# createdb music_library 
+# createdb garage_management 
 #
 # 
 # If you have already created your database, and need to delete it, use:
@@ -50,8 +50,6 @@ mechanic_repository.save(mechanic_mot)
 
 mechanic_no_mot = Mechanic("Roger", "Rabbit", False)
 mechanic_repository.save(mechanic_no_mot)
-
-
 
 
 # for testing/tracing:
