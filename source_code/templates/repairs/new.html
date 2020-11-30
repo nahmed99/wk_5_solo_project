@@ -6,11 +6,14 @@
 
 <form action="/repairs" method="post">
 
-    <label for="repair_date">Date</label>
-    <input type="text" id="repair_date" name="repair_date">
+    <label for="car">Select car</label>
+    <select name="car_id" id="car">
+        {% for car in all_cars %}
+            <option value="{{car.id}}">{{car.registration_number}}</option>
+        {% endfor %}
+    </select>
 
-    <label for="details">Details</label>
-    <textarea name="details" id="details" cols="35" rows="5"></textarea>
+    <br><br>
 
     <label for="mechanic">Select mechanic</label>
     <select name="mechanic_id" id="mechanic">
@@ -19,12 +22,17 @@
         {% endfor %}
     </select>
 
-    <label for="car">Select car</label>
-    <select name="car_id" id="car">
-        {% for car in all_cars %}
-            <option value="{{car.id}}">{{car.registration_number}}</option>
-        {% endfor %}
-    </select>
+    <br><br>
+
+    <label for="repair_date">Date</label>
+    <input type="text" id="repair_date" name="repair_date">
+
+    <br><br>
+
+    <label for="details">Details</label>
+    <textarea name="details" id="details" cols="35" rows="5"></textarea>
+
+    <br><br>
 
     <input class="btn btn-submit" type="submit" value="Repair">
 
