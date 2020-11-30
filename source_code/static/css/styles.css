@@ -70,3 +70,30 @@ select:required:invalid {
 option[value=""][disabled] {
     display: none;
 }
+
+/* All input fields should look the similar */
+input, select {
+    width: 200px;
+    border: solid 3px gray;
+    font-size: 1em;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+input:hover, textarea:hover, select:hover {
+    border: solid 3px #7ac7c8;
+}
+input:focus, textarea:focus, select:hover {
+    border: solid 3px #1515cc;
+}
+input:focus {
+    width: 200px;
+}
+textarea:focus {
+    width: 500px;
+}
+
+.btn-delete, .btn-submit {
+    margin-top: 25px;
+}
+
