@@ -1,3 +1,7 @@
+section {
+    font-size: 1.2em;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -34,4 +38,24 @@ header h1 {
 .nav_links li a:hover {
     color: yellowgreen;
     padding: 5px; /* This will make the link stand out a bit more */
+}
+
+.data-area{
+    background-color: rgb(233, 233, 233);
+    padding: 10px;
+    margin: 5px;
+    border-radius: 1%;
+}
+
+.data-area td{
+    padding: 3px 10px;
+}
+
+.btn-delete{
+    background: rgb(212, 31, 31);
+    color: white;
+    padding: 5px;
+    border: none;
+    border-radius: 1%;
+    font-size: 1em;
 }

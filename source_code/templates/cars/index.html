@@ -6,7 +6,7 @@
 
     <h1>Cars:</h1> 
 
-    <table>
+    <table class="data-area">
         <tr>
             <th>Registration</th>
             <th>Make</th>
@@ -20,7 +20,7 @@
             <td>{{car.make}}</td>
             <td>{{car.model}}</td>
             <td>{{car.mot_renewal_date}}</td>
-            <td><a href="/cars/{{ car.id }}">Worked On By</a></td>
+            <td><a href="/cars/{{ car.id }}">Repaired By</a></td>
         </tr>
         {% endfor %}
 

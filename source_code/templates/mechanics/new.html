@@ -7,17 +7,17 @@
 <form action="/mechanics" method="post">
 
     <label for="fname">First name</label>
-    <input type="text" id="fname" name="first_name">
+    <input type="text" id="fname" name="first_name" required>
 
     <br><br>
 
     <label for="lname">Last name</label>
-    <input type="text" id="lname" name="last_name">
+    <input type="text" id="lname" name="last_name" required>
 
     <br><br>
 
     <label for="mot">MOT Qualified?</label>
-    <select name="mot_qualified" id="mot">
+    <select name="mot_qualified" id="mot" required>
         <option></option>
         <option value="True">Yes</option>
         <option value="False">No</option>
