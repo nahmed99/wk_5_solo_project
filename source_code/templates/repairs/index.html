@@ -6,6 +6,10 @@
 
     <h1>Repairs</h1> 
 
+    <p id="add-repair-wrapper">
+        <a id="add-repair" href="/repairs/new">Add New Repair</a>
+    </p>
+
     <table>
         <tr>
             <th>Date</th>
@@ -21,7 +25,7 @@
             <td>{{repair.mechanic.first_name}} {{repair.mechanic.last_name}}</td>
             <td>{{repair.details}}</td>
             <td><form action="/repairs/{{ repair.id }}/delete" method="POST">
-                <input class="delete-btn" type="submit" value="delete" />
+                <input class="btn btn-delete" type="submit" value="delete" />
               </form></td>
         </tr>
         {% endfor %}

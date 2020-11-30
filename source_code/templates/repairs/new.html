@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1> Add New Repair</h1>
+
+<form action="/repairs" method="post">
+
+    <label for="repair_date">Date</label>
+    <input type="text" id="repair_date" name="repair_date">
+
+    <label for="details">Details</label>
+    <textarea name="details" id="details" cols="35" rows="5"></textarea>
+
+    <label for="mechanic">Select mechanic</label>
+    <select name="mechanic_id" id="mechanic">
+        {% for mechanic in all_mechanics %}
+            <option value="{{mechanic.id}}">{{mechanic.first_name}} {{mechanic.last_name}}</option>
+        {% endfor %}
+    </select>
+
+    <label for="car">Select car</label>
+    <select name="car_id" id="car">
+        {% for car in all_cars %}
+            <option value="{{car.id}}">{{car.registration_number}}</option>
+        {% endfor %}
+    </select>
+
+    <input class="btn btn-submit" type="submit" value="Repair">
+
+</form>
+
+{% endblock %}
