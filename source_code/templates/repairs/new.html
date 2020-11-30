@@ -6,7 +6,6 @@
 
 <form action="/repairs" method="post">
 
-    <br>
     <select name="car_id" id="car" required>
         <option value="" disabled selected>Select Car</option>
         {% for car in all_cars %}
@@ -15,8 +14,6 @@
     </select>
     <br>
 
-
-    <br>
     <select name="mechanic_id" id="mechanic" required>
         <option value="" disabled selected>Select Mechanic</option>
         {% for mechanic in all_mechanics %}
@@ -25,11 +22,7 @@
     </select>
     <br>
 
-
-    <br>
-    <input type="text" id="repair_date" name="repair_date" placeholder=" Enter Date" required>
-    <br>
-
+    <input type="date" id="repair_date" name="repair_date" placeholder=" Enter Date" required>
 
     <br>
     <textarea name="details" id="details" cols="35" rows="5" placeholder="Enter Details" required></textarea>
