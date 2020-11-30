@@ -12,13 +12,17 @@
             <th>Vehicle</th>
             <th>Mechanic</th>
             <th>Details</th>
+            <th></th>
         </tr>
         {% for repair in all_repairs %}
         <tr>
             <td>{{repair.repair_date}}</td>
-            <td> {{repair.car.registration_number}}</td>
-            <td> {{repair.mechanic.first_name}} {{repair.mechanic.last_name}}</td>
-            <td> {{repair.details}}</td>
+            <td>{{repair.car.registration_number}}</td>
+            <td>{{repair.mechanic.first_name}} {{repair.mechanic.last_name}}</td>
+            <td>{{repair.details}}</td>
+            <td><form action="/repairs/{{ repair.id }}/delete" method="POST">
+                <input class="delete-btn" type="submit" value="delete" />
+              </form></td>
         </tr>
         {% endfor %}
 
