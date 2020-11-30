@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Add New Car</h1>
+
+<form action="/cars" method="post">
+
+    <input type="text" id="reg_num" name="registration_number" placeholder="Registration Number" required>
+
+    <br>
+
+    <input type="text" id="make" name="make" placeholder="Make" required>
+
+    <br>
+
+    <input type="text" id="model" name="model" placeholder="Model" required>
+
+    <br>
+
+    <label for="mot_date">MOT Renewal:</label>
+    <br>
+    <input type="date" id="mot_date" name="mot_renewal_date" required>
+
+    <br>
+
+    <input class="btn btn-submit" type="submit" value="Add">
+
+</form>
+
+{% endblock %}
