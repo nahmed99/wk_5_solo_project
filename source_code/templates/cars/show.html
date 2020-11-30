@@ -15,11 +15,13 @@
             <tr>
                 <th>Mechanic</th>
                 <th></th>
+                <th>Repairs</th>
             </tr>
             {% for mechanic in mechanics %}
                 <tr>
                     <td>{{mechanic.first_name}}</td>
                     <td>{{mechanic.last_name}}</td>
+                    <td><a href="/repairs/{{mechanic.id}}/{{ car.id }}">Details</a></td>
                 </tr>
             {% endfor %}
     
