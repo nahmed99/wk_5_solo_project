@@ -6,12 +6,17 @@
 
     <h1>Mechanics</h1> 
 
+    <p id="add-mechanic-wrapper">
+        <a id="add-mechanic" href="/mechanics/new">Add New Mechanic</a>
+    </p>
+
     <table>
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
             <th>MOT Qualified</th>
             <th></th>
+            <!-- <th></th> -->
         </tr>
         {% for mechanic in all_mechanics %}
         <tr>
@@ -25,6 +30,12 @@
             {% endif %}
 
             <td><a href="/mechanics/{{ mechanic.id }}">Completed Jobs</a></td>
+
+            <!-- 
+                deleting a mechanic will require a bit more work, especially if there are repairs assigned...might be okay due to "ON DELETE CASCADE," in the sql/ddl create table for repairs.
+                <td><form action="/mechanics/{{ mechanic.id }}/delete" method="POST">
+                <input class="btn btn-delete" type="submit" value="delete" />
+              </form></td> -->
         </tr>
         {% endfor %}
 

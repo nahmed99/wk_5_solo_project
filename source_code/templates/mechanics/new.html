@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Add New Mechanic</h1>
+
+<form action="/mechanics" method="post">
+
+    <label for="fname">First name</label>
+    <input type="text" id="fname" name="first_name">
+
+    <br><br>
+
+    <label for="lname">Last name</label>
+    <input type="text" id="lname" name="last_name">
+
+    <br><br>
+
+    <label for="mot">MOT Qualified?</label>
+    <select name="mot_qualified" id="mot">
+        <option></option>
+        <option value="True">Yes</option>
+        <option value="False">No</option>
+    </select>
+
+    <br><br>
+
+    <input class="btn btn-submit" type="submit" value="Add">
+
+</form>
+
+{% endblock %}
