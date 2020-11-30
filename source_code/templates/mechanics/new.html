@@ -6,24 +6,21 @@
 
 <form action="/mechanics" method="post">
 
-    <label for="fname">First name</label>
-    <input type="text" id="fname" name="first_name" required>
+    <input type="text" id="fname" name="first_name" placeholder="First Name" required>
 
-    <br><br>
+    <br>
 
-    <label for="lname">Last name</label>
-    <input type="text" id="lname" name="last_name" required>
+    <input type="text" id="lname" name="last_name" placeholder="Last Name" required>
 
-    <br><br>
+    <br>
 
-    <label for="mot">MOT Qualified?</label>
     <select name="mot_qualified" id="mot" required>
-        <option></option>
+        <option value="" disabled selected>MOT Qualified?</option>
         <option value="True">Yes</option>
         <option value="False">No</option>
     </select>
 
-    <br><br>
+    <br>
 
     <input class="btn btn-submit" type="submit" value="Add">
 

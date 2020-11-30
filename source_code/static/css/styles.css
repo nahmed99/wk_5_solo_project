@@ -2,7 +2,7 @@ section {
     font-size: 1.2em;
 }
 
-header {
+.main-banner {
     display: flex;
     justify-content: space-between;
     align-items: centre;
@@ -10,7 +10,7 @@ header {
     background-color: gray;
 }
 
-header h1 {
+.main-banner h1 {
     /*color: white;*/
     color: silver;
     margin-left: 35px;
@@ -58,4 +58,15 @@ header h1 {
     border: none;
     border-radius: 1%;
     font-size: 1em;
+}
+
+/*
+The following two css selectors are to gray-out the placeholders in the
+select options when creating new records, repairs or mechanics etc.
+*/
+select:required:invalid {
+    color: gray;
+}
+option[value=""][disabled] {
+    display: none;
 }
