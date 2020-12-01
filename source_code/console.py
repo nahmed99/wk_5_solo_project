@@ -10,7 +10,7 @@
 #
 #
 # CREATE THE TABLES (using: psql -d database_name -f filename.sql):
-# psql -d music_library -f db/music_library.sql
+# psql -d garage_management -f db/garage_management.sql
 #
 # Then run this file as a normal python program...
 #
@@ -24,7 +24,7 @@
 # \c database_name  (to connect to the db)
 # select * from table;  (or any other sql commands...)
 #  
-#  or you can use: psql -d quest_advisor
+#  or you can use: psql -d garage_management
 # 
 # To access the database:
 #
