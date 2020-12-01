@@ -8,6 +8,7 @@ section {
     align-items: centre;
     padding: 0px 0px;
     background-color: gray;
+    border-radius: 10px;
 }
 
 .main-banner h1 {
@@ -25,8 +26,9 @@ section {
     display: inline-block;
     font-size: 1.3em;
     background-color: rgb(100, 100, 100);
-    border-radius: 10%;
-    padding: 10px;
+    border-radius: 5px;
+    margin: 10px 10px 0px 0px;
+    padding: 5px 10px 10px 10px;
 } 
 
 .nav_links li a {
@@ -72,7 +74,7 @@ option[value=""][disabled] {
 }
 
 /* All input fields should look the similar */
-input, select {
+.form-data input, .form-data select {
     width: 200px;
     border: solid 3px gray;
     font-size: 1em;
@@ -80,20 +82,32 @@ input, select {
     margin-bottom: 20px;
     border-radius: 5px;
 }
-input:hover, textarea:hover, select:hover {
+.form-data textarea {
+    border: solid 3px gray;
+    font-size: 1em;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.form-data input:hover, textarea:hover, select:hover {
     border: solid 3px #7ac7c8;
 }
-input:focus, textarea:focus, select:hover {
+.form-data input:focus, textarea:focus, select:focus {
     border: solid 3px #1515cc;
 }
-input:focus {
+.form-data input:focus {
     width: 200px;
 }
-textarea:focus {
+.form-data textarea:focus {
     width: 500px;
 }
 
-.btn-delete, .btn-submit {
+.btn-submit{
     margin-top: 25px;
+
+}
+.btn-delete {
+    padding: 5px;
+    border-radius: 5px;
 }
 
