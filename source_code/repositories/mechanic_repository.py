@@ -36,6 +36,7 @@ def select_all():
 
     sql = "SELECT * FROM mechanics ORDER BY mot_qualified DESC, first_name ASC"
     results = run_sql(sql)
+    
 
     for row in results:
         mechanic = Mechanic(row['first_name'], row['last_name'], row['mot_qualified'], row['id'])
