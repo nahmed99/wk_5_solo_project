@@ -88,9 +88,13 @@ option[value=""][disabled] {
     display: none;
 }
 
+
+.form-title{
+    margin-left: 300px;;
+}
 /* All input fields should look the similar */
 .form-data{
-    margin-left: 125px;
+    margin-left: 300px;
 }
 
 .form-data input, .form-data select {
