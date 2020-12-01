@@ -50,21 +50,21 @@ MVP
 The garage wants to be able to register / track repairs. Important information for the management to know is -
 
 = Mechanic =
-First Name
-Last Name
-Whether or not MOT qualified
+- First Name
+- Last Name
+- Whether or not MOT qualified
 
 = Car = 
-Registration Number
-Make
-Model
-MOT Renewal Date (not essential, but useful for potential future follow up work)
+- Registration Number
+- Make
+- Model
+- MOT Renewal Date (not essential, but useful for potential future follow up work)
 
 = Repairs =
-Date of Repair
-Vehicle Repaired
-Mechanic 
-Details of Repair
+- Date of Repair
+- Vehicle Repaired
+- Mechanic 
+- Details of Repair
 
 
 The management must be able to create records of repairs, linking mechanics to the cars.
@@ -75,18 +75,19 @@ CRUD actions for repairs - remember the user - what would they want to see on ea
 Possible Extensions
 *********************
 
-Be able to view multiple repairs carried out by a mechanic to a particular car
-Be able to view multiple (including historic) repairs done to a car by a particular mechanic
-Be able to toggle a mechanic's MOT qualification status
-Be able to add and delete mechanics
-Be able to add new cars 
-
+- Be able to view multiple repairs carried out by a mechanic to a particular car
+- Be able to view multiple (including historic) repairs done to a car by a particular mechanic
+- Be able to toggle a mechanic's MOT qualification status
+- Be able to add and delete mechanics
+- Be able to add new cars 
+- Create Owner class and link owner details to the cars (one to many relationship)
+- Display data in sorted order (date(s), mot qualification status order etc)
 
 
  Technologies Used 
 *******************
-Python
-PostGre SQL DB
-Flask
-HTML
-CSS
+- Python
+- PostGre SQL DB
+- Flask
+- HTML
+- CSS
