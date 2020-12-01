@@ -65,6 +65,9 @@ def edit_repair(id):
     
     # Gather data
     repair = repair_repository.select(id)
+    
+    # need to send details of all mechanics and cars so that user can
+    # choose them from drop-down lists.
     mechanics = mechanic_repository.select_all()
     cars = car_repository.select_all()
 

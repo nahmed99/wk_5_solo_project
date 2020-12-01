@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Update Repair</h1>
+
+<form class="form-data" action="/repairs/{{repair.id}}" method="post">
+
+    <select name="car_id" id="car" required>
+        {% for car in all_cars %}
+            <!-- Use the car.id in the repair class to dhow the default car -->
+            <option value="{{car.id}}" {% if car.id == repair.car.id %} selected {% endif %}>{{car.registration_number}}
+            </option>
+        {% endfor %}
+    </select>
+
+    <br>
+
+    <select name="mechanic_id" id="mechanic" required>
+        {% for mechanic in all_mechanics %}
+            <!-- Use the mechanic.id in the repair class to show the default mechanic -->
+            <option value="{{mechanic.id}}" {% if mechanic.id == repair.mechanic.id %} selected {% endif %}>{{mechanic.first_name}} {{mechanic.last_name}}
+            </option>
+        {% endfor %}
+    </select>
+    <br>
+
+    <label for="mot_date">Repair Date:</label>
+    <br>
+    <input type="date" id="repair_date" name="repair_date" value="{{repair.repair_date}}" required>
+
+    <br>
+    <textarea name="details" id="details" cols="35" rows="5" required>{{repair.details}}</textarea>
+    <br>
+
+    <input class="btn btn-submit" type="submit" value="Repair">
+
+</form>
+
+{% endblock %}
