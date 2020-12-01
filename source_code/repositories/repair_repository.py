@@ -39,6 +39,13 @@ def select_all():
     return repairs
 
 
+def update(repair):
+    sql = "UPDATE repairs SET (repair_date, details, mechanic, car) = (%s, %s, %s, %s) WHERE id = %s"
+
+    values = [repair.repair_date, repair.details, repair.mechanic, repair.car]
+    run_sql(sql, values)
+
+
 def delete_all():
     sql = "DELETE FROM repairs"
     run_sql(sql)

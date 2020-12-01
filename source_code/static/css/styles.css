@@ -45,7 +45,8 @@ section {
 .data-area{
     background-color: rgb(233, 233, 233);
     padding: 10px;
-    margin: 5px;
+    margin-left: auto;
+    margin-right: auto;
     border-radius: 1%;
 }
 
@@ -53,13 +54,16 @@ section {
     padding: 3px 10px;
 }
 
-.btn-delete{
-    background: rgb(212, 31, 31);
-    color: white;
-    padding: 5px;
-    border: none;
-    border-radius: 1%;
-    font-size: 1em;
+#add-record{
+    background-color: rgb(233, 233, 233);
+    color: blue;
+    border: solid 3px green;
+    padding: 0px 10px;
+    margin-left: 15px;
+    border-radius: 5px;
+    font-size: 2.5em;
+    font-weight: bolder;
+    text-decoration: none;
 }
 
 /*
@@ -106,8 +110,18 @@ option[value=""][disabled] {
     margin-top: 25px;
 
 }
-.btn-delete {
+
+.btn-delete{
+    /* color: white;  */
+    background-color: rgb(233, 233, 233);
+    border: solid 3px red;
     padding: 5px;
     border-radius: 5px;
+    font-size: 1em;
+}
+
+.btn-delete:hover {
+    background: yellow;
+    border: solid 3px black;
 }
 

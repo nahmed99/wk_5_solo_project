@@ -6,8 +6,8 @@
 
     <h1>Repairs</h1> 
 
-    <p id="add-repair-wrapper">
-        <a id="add-repair" href="/repairs/new">Add Repair</a>
+    <p id="add-record-wrapper">
+        <a id="add-record" href="/repairs/new">&#43;</a>
     </p>
 
     <table class="data-area">
@@ -17,6 +17,7 @@
             <th>Mechanic</th>
             <th>Details</th>
             <th></th>
+            <th></th>
         </tr>
         {% for repair in all_repairs %}
         <tr>
@@ -24,9 +25,16 @@
             <td>{{repair.car.registration_number}}</td>
             <td>{{repair.mechanic.first_name}} {{repair.mechanic.last_name}}</td>
             <td>{{repair.details}}</td>
-            <td><form action="/repairs/{{ repair.id }}/delete" method="POST">
-                <input class="btn btn-delete" type="submit" value="delete" />
-              </form></td>
+            <td>
+                <form action="/repairs/{{ repair.id }}/delete" method="POST">
+                    <input class="btn btn-delete" type="submit" value=&#128465; />
+                </form>
+            </td>
+            <td>
+                <form action="/repairs/{{ repair.id }}/delete" method="POST">
+                    <input class="btn btn-delete" type="submit" value=&#128465; />
+                </form
+            ></td>
         </tr>
         {% endfor %}
 

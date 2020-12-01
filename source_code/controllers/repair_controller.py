@@ -59,6 +59,41 @@ def create_repair():
     return redirect('/repairs')
 
 
+# EDIT
+@repairs_blueprint.route("/repairs/<id>/edit")
+def edit_repair(id):
+    
+    # Gather data
+    repair = repair_repository.select(id)
+    mechanics = mechanic_repository.select_all()
+    cars = car_repository.select_all()
+
+    # Send date to edit page
+    return render_template('repairs/edit.html', repair=repair, all_mechanics=mechanics, all_cars=cars)
+
+
+# UPDATE
+@repairs_blueprint.route("/repairs/<id>", methods=["POST"])
+def update_repair(id):
+
+    repair_date = request.form['repair_date']
+    details =  request.form['details']
+
+    machanic_id = request.form["mechanic_id"]
+    mechanic = mechanic_repository.select(machanic_id)
+
+    car_id = request.form["car_id"]
+    car = car_repository.select(car_id)
+
+    # create repair object
+    repair = Repair(repair_date, details, mechanic, car, id)
+
+    # update repair on database
+    repair_repository.update(repair)
+
+    # send control back to repairs page
+    return redirect("/repairs")
+
 
 @repairs_blueprint.route("/repairs/<id>/delete", methods=['POST'])
 def delete_repair(id):
