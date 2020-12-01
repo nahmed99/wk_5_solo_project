@@ -16,6 +16,26 @@ def save(repair):
     return repair
 
 
+def select(id):
+    repair = None
+    sql = "SELECT * FROM repairs WHERE id = %s"
+    values = [id] # a list is supplied to run_sql
+
+    result = run_sql(sql, values)[0] # ensure only one row is returned.
+
+    if result is not None:
+         # using mechanic_id from repairs, retrieve mechanic object
+        mechanic = mechanic_repository.select(result['mechanic_id'])
+
+        # using car_id from repairs, retrieve car object
+        car = car_repository.select(result['car_id'])
+
+        # create Repair object, assign to variable 'repair'
+        repair = Repair(result['repair_date'], result['details'], mechanic, car, result['id'])
+
+    return repair
+
+
 def select_all():
 
     # create empty list

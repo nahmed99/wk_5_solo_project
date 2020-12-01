@@ -18,19 +18,6 @@ def save(mechanic):
     return mechanic
 
 
-def select_all():
-    mechanics = []
-
-    sql = "SELECT * FROM mechanics"
-    results = run_sql(sql)
-
-    for row in results:
-        mechanic = Mechanic(row['first_name'], row['last_name'], row['mot_qualified'], row['id'])
-        mechanics.append(mechanic)
-
-    return mechanics
-
-
 def select(id):
     mechanic = None
     sql = "SELECT * FROM mechanics WHERE id = %s"
@@ -42,6 +29,19 @@ def select(id):
         mechanic = Mechanic(result['first_name'], result['last_name'], result['mot_qualified'], result['id'])
 
     return mechanic
+
+
+def select_all():
+    mechanics = []
+
+    sql = "SELECT * FROM mechanics"
+    results = run_sql(sql)
+
+    for row in results:
+        mechanic = Mechanic(row['first_name'], row['last_name'], row['mot_qualified'], row['id'])
+        mechanics.append(mechanic)
+
+    return mechanics
 
 
 def delete(id):

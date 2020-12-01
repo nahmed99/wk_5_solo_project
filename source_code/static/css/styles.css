@@ -54,18 +54,6 @@ section {
     padding: 3px 10px;
 }
 
-#add-record{
-    background-color: rgb(233, 233, 233);
-    color: blue;
-    border: solid 3px green;
-    padding: 0px 10px;
-    margin-left: 15px;
-    border-radius: 5px;
-    font-size: 2.5em;
-    font-weight: bolder;
-    text-decoration: none;
-}
-
 /*
 The following two css selectors are to gray-out the placeholders in the
 select options when creating new records, repairs or mechanics etc.
@@ -111,6 +99,23 @@ option[value=""][disabled] {
 
 }
 
+#add-record{
+    background-color: rgb(233, 233, 233);
+    color: blue;
+    border: solid 3px blue;
+    padding: 0px 10px;
+    margin-left: 15px;
+    border-radius: 5px;
+    font-size: 2.5em;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+#add-record:hover {
+    background: powderblue;
+    border: solid 3px black;
+}
+
 .btn-delete{
     /* color: white;  */
     background-color: rgb(233, 233, 233);
@@ -123,5 +128,18 @@ option[value=""][disabled] {
 .btn-delete:hover {
     background: yellow;
     border: solid 3px black;
+}
+
+.btn-edit{
+    background-color: rgb(233, 233, 233);
+    border: solid 3px black;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.btn-edit:hover {
+    background: powderblue;
+    border: solid 3px blue;
 }
 
