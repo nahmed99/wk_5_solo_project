@@ -14,28 +14,42 @@
         <tr>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>MOT Qualified</th>
+
             <th></th>
-            <!-- <th></th> -->
+
+            <th>MOT Qualified</th>
+
+            <th></th>
         </tr>
         {% for mechanic in all_mechanics %}
         <tr>
             <td>{{mechanic.first_name}}</td>
             <td> {{mechanic.last_name}}</td>
 
-            {% if mechanic.mot_qualified %}
-                <td>✅</td>
-            {% else %}
-                <td>🚫</td>
-            {% endif %}
-
             <td><a href="/mechanics/{{ mechanic.id }}">Cars Repaired</a></td>
 
+            {% if mechanic.mot_qualified %}
+                <td>
+                    <form action="/mechanics/{{ mechanic.id }}/mot_toggle" method="POST">
+                        <input class="mot-qual" type="submit" value="✅" />
+                    </form>
+                </td>
+            {% else %}
+                <td>
+                    <form action="/mechanics/{{ mechanic.id }}/mot_toggle" method="POST">
+                        <input class="mot-qual" type="submit" value="🚫" />
+                    </form>
+                </td>
+            {% endif %}
+
             <!-- 
-                deleting a mechanic will require a bit more work, especially if there are repairs assigned...might be okay due to "ON DELETE CASCADE," in the sql/ddl create table for repairs.
-                <td><form action="/mechanics/{{ mechanic.id }}/delete" method="POST">
-                <input class="btn btn-delete" type="submit" value="delete" />
-              </form></td> -->
+            "ON DELETE CASCADE," in the sql/ddl create table for repairs allows easier deletion of mechanics.
+            -->
+            <td>
+                <form action="/mechanics/{{ mechanic.id }}/delete" method="POST">
+                    <input class="btn btn-delete" type="submit" value=&#128465; />
+                </form>
+            </td>
         </tr>
         {% endfor %}
 

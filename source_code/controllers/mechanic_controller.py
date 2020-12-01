@@ -45,3 +45,14 @@ def create_mechanic():
     # return to mechanics webpage
     return redirect('/mechanics')
 
+
+@mechanics_blueprint.route("/mechanics/<id>/delete", methods=['POST'])
+def delete_mechanic(id):
+    mechanic_repository.delete(id)
+    return redirect("/mechanics")
+
+
+@mechanics_blueprint.route("/mechanics/<id>/mot_toggle", methods=['POST'])
+def mot_toggle(id):
+    mechanic_repository.mot_toggle(id)
+    return redirect("/mechanics")

@@ -116,6 +116,10 @@ option[value=""][disabled] {
     border: solid 3px black;
 }
 
+.mot-qual{
+    text-decoration: none;
+}
+
 .btn-delete{
     /* color: white;  */
     background-color: rgb(233, 233, 233);

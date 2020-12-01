@@ -74,3 +74,16 @@ def cars_repaired(mechanic):
         results.append(car)
 
     return results
+
+
+def mot_toggle(id):
+    mechanic = select(id)
+    if mechanic != None:
+        toggled_mot_qualified = not mechanic.mot_qualified
+
+    # For some VERY strange reason, PostgreSQL won't let you update a single column in a multi-column table, without using a sub-select or a row()..? A bit late in the day, so 'amended' two columns just to get past this - need to find out how to use the Row() expression...
+
+    sql = "UPDATE mechanics SET (mot_qualified, first_name) = (%s, %s) WHERE id = %s RETURNING id"
+    values = [toggled_mot_qualified, mechanic.first_name, id]
+    run_sql(sql, values)
+
