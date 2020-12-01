@@ -56,7 +56,7 @@ def delete_all():
 def worked_on_by(car):
     results = []
 
-    sql = """SELECT mechanics.*
+    sql = """SELECT DISTINCT mechanics.*
            FROM mechanics
            INNER JOIN repairs ON repairs.mechanic_id = mechanics.id
            INNER JOIN cars ON repairs.car_id = cars.id
