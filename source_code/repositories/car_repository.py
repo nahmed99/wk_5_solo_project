@@ -17,7 +17,7 @@ def save(car):
 def select_all():
     cars = []
 
-    sql = "SELECT * FROM cars"
+    sql = "SELECT * FROM cars ORDER BY mot_renewal_date ASC, registration_number ASC"
     results = run_sql(sql)
 
     for row in results:

@@ -18,7 +18,7 @@ def save(repair):
 
 def select(id):
     repair = None
-    sql = "SELECT * FROM repairs WHERE id = %s"
+    sql = "SELECT * FROM repairs WHERE id = %s ORDER BY repair_date DESC"
     values = [id] # a list is supplied to run_sql
 
     result = run_sql(sql, values)[0] # ensure only one row is returned.
@@ -41,7 +41,7 @@ def select_all():
     # create empty list
     repairs = []
 
-    sql = "SELECT * FROM repairs"
+    sql = "SELECT * FROM repairs ORDER BY repair_date DESC"
     results = run_sql(sql)
 
     for row in results:

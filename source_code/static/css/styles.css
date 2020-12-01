@@ -66,6 +66,10 @@ option[value=""][disabled] {
 }
 
 /* All input fields should look the similar */
+.form-data{
+    margin-left: 125px;
+}
+
 .form-data input, .form-data select {
     width: 200px;
     border: solid 3px gray;
@@ -117,7 +121,9 @@ option[value=""][disabled] {
 }
 
 .mot-qual{
+    background-color: rgb(233, 233, 233);
     text-decoration: none;
+    border: none;
 }
 
 .btn-delete{

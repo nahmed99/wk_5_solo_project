@@ -34,7 +34,7 @@ def select(id):
 def select_all():
     mechanics = []
 
-    sql = "SELECT * FROM mechanics"
+    sql = "SELECT * FROM mechanics ORDER BY mot_qualified DESC, first_name ASC"
     results = run_sql(sql)
 
     for row in results:
