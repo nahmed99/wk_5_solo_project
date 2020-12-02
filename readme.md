@@ -81,6 +81,7 @@ Possible Extensions
 - Be able to add and delete mechanics
 - Be able to add new cars 
 - Create Owner class and link owner details to the cars (one to many relationship)
+- Add search function to repairs page - to only display repairs that match criteria
 - Display data in sorted order (date(s), mot qualification status order etc)
 
 
