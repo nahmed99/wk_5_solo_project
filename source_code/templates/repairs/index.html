@@ -8,7 +8,7 @@
         <h1>Repairs</h1> 
 
         <p id="add-record-wrapper">
-            <a id="add-record" href="/repairs/new">&#43;</a>
+            <a id="add-record" href="/repairs/new" title="Add New Repair">&#43;</a>
         </p>
     </header>
 
@@ -39,12 +39,12 @@
             <td>{{repair.details}}</td>
             <td>
                 <form action="/repairs/{{ repair.id }}/edit" method="GET">
-                    <input class="btn btn-edit" type="submit" value= ✏️ />
+                    <input class="btn btn-edit" type="submit" value= ✏️ title="Edit"/>
                 </form>
             </td>
             <td>
                 <form action="/repairs/{{ repair.id }}/delete" method="POST">
-                    <input class="btn btn-delete" type="submit" value=&#128465; />
+                    <input class="btn btn-delete" type="submit" value=&#128465; alt="Delete" title="Delete"/>
                 </form>
             </td>
         </tr>

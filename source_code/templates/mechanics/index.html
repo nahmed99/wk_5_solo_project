@@ -8,7 +8,7 @@
         <h1>Mechanics</h1> 
 
         <p id="add-record-wrapper">
-            <a id="add-record" href="/mechanics/new">&#43;</a>
+            <a id="add-record" href="/mechanics/new" title="Add New Mechanic">&#43;</a>
         </p>
     </header>
 
@@ -33,13 +33,13 @@
             {% if mechanic.mot_qualified %}
                 <td>
                     <form action="/mechanics/{{ mechanic.id }}/mot_toggle" method="POST">
-                        <input class="mot-qual" type="submit" value="✅" />
+                        <input class="mot-qual" type="submit" value="✅" title="Toggle MOT Status"/>
                     </form>
                 </td>
             {% else %}
                 <td>
                     <form action="/mechanics/{{ mechanic.id }}/mot_toggle" method="POST">
-                        <input class="mot-qual" type="submit" value="🚫" />
+                        <input class="mot-qual" type="submit" value="🚫" title="Toggle MOT Status"/>
                     </form>
                 </td>
             {% endif %}
@@ -49,7 +49,7 @@
             -->
             <td>
                 <form action="/mechanics/{{ mechanic.id }}/delete" method="POST">
-                    <input class="btn btn-delete" type="submit" value=&#128465; />
+                    <input class="btn btn-delete" type="submit" value=&#128465; title="Delete"/>
                 </form>
             </td>
         </tr>
