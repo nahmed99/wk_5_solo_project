@@ -20,6 +20,20 @@ def show(mechanic_id, car_id):
     return render_template("/repairs/show.html", car_repairs = repairs)
 
 
+@repairs_blueprint.route("/repairs/search", methods=['GET'])
+def search():
+    # Need to use the args function to extract data from query string (for GET)!!!
+    search_string = request.args["search_string"]
+    repairs = repair_repository.search(search_string)
+
+    # If nothing returned from the search, then display the full repairs list
+    if len(repairs) > 0:
+        return render_template("/repairs/index.html", all_repairs = repairs)
+    else:
+        return redirect('/repairs')
+
+
+
 # NEW
 # GET '/repairs/new'
 @repairs_blueprint.route("/repairs/new", methods = ['GET'])

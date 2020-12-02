@@ -59,6 +59,28 @@ def select_all():
     return repairs
 
 
+def search(search_string):
+    repairs = []
+
+    if len(search_string) > 0:
+        sql = "SELECT * FROM repairs WHERE details LIKE %s"
+        new_search_string = '%' + search_string + '%'
+        values = [new_search_string] 
+
+        results = run_sql(sql, values)
+
+        for row in results:
+            mechanic = mechanic_repository.select(row['mechanic_id'])
+            car = car_repository.select(row['car_id'])
+
+            # create Repair object, assign to variable 'repair'
+            repair = Repair(row['repair_date'], row['details'], mechanic, car, row['id'])
+
+            repairs.append(repair)
+
+    return repairs
+
+
 def update(repair):
     sql = "UPDATE repairs SET (repair_date, details, mechanic_id, car_id) = (%s, %s, %s, %s) WHERE id = %s RETURNING id"
 

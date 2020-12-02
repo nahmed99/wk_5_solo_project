@@ -8,9 +8,19 @@
         <h1>Repairs</h1> 
 
         <p id="add-record-wrapper">
-            <a id="add-record" href="/repairs/new">&#43;</a>
+            <a id="btn-search" href="/repairs/new">&#43;</a>
         </p>
     </header>
+
+    
+    <form class="form-data" action="/repairs/search" method="get">
+
+        <input type="text" id="search_string" name="search_string" placeholder="Enter search string">
+    
+        <input class="btn btn-submit" type="submit" value="Search">
+    
+    </form>
+
 
     <table class="data-area">
         <tr>
