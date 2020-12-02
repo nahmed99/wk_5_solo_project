@@ -63,7 +63,7 @@ def search(search_string):
     repairs = []
 
     if len(search_string) > 0:
-        sql = "SELECT * FROM repairs WHERE details LIKE %s"
+        sql = "SELECT * FROM repairs WHERE details LIKE %s ORDER BY repair_date DESC"
         new_search_string = '%' + search_string + '%'
         values = [new_search_string] 
 
