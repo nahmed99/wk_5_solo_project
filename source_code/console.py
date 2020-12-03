@@ -30,6 +30,11 @@
 #
 # psql -d database_name
 #
+#
+# The following command might be useful at some point:
+#
+#   rm -f /usr/local/var/postgres/postmaster.pid
+#
 
 import pdb
 
